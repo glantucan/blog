@@ -6,6 +6,7 @@ import GlobalStyle from '../styles/GlobalStyle';
 import theme, { antdTheme } from '../styles/theme';
 import Header from './Header';
 import Footer from './Footer';
+import PageTransition from './PageTransition';
 
 export default function RootLayout({ children, fontFamily }) {
   // Update antdTheme with font family
@@ -22,7 +23,11 @@ export default function RootLayout({ children, fontFamily }) {
       <ConfigProvider theme={customAntdTheme}>
         <GlobalStyle />
         <Header />
-        <main>{children}</main>
+        <main>
+          <PageTransition>
+            {children}
+          </PageTransition>
+        </main>
         <Footer />
       </ConfigProvider>
     </ThemeProvider>

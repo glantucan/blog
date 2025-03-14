@@ -48,5 +48,7 @@ export const antdTheme = {
     colorWarning: theme.colors.warning,
     colorError: theme.colors.error,
     borderRadius: 4,
+    fontSize: 16,
+    lineHeight: 1.8,
   },
 };

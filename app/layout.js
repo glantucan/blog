@@ -1,9 +1,9 @@
-import { Inter } from 'next/font/google';
+import { Playwrite_DE_Grund } from 'next/font/google';
 import StyledComponentsRegistry from '../lib/registry';
 import RootLayout from '../components/RootLayout';
 import '../styles/globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const playwrite = Playwrite_DE_Grund({ subsets: ['latin'], weight: ['100', '400'] });
 
 export const metadata = {
   title: 'Photography Blog',
@@ -13,11 +13,9 @@ export const metadata = {
 export default function Layout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={playwrite.className}>
         <StyledComponentsRegistry>
-          <RootLayout fontFamily={inter.style.fontFamily}>
-            {children}
-          </RootLayout>
+          <RootLayout fontFamily={playwrite.style.fontFamily}>{children}</RootLayout>
         </StyledComponentsRegistry>
       </body>
     </html>
