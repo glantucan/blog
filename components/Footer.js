@@ -1,3 +1,5 @@
+'use client';
+
 import styled from 'styled-components';
 import { Layout, Typography } from 'antd';
 
@@ -6,10 +8,10 @@ const { Text } = Typography;
 
 const StyledFooter = styled(AntFooter)`
   text-align: center;
-  background-color: #f0f2f5;
+  background-color: ${props => props.theme.colors.lightGray};
   padding: 24px 50px;
   
-  @media (max-width: 768px) {
+  @media (max-width: ${props => props.theme.breakpoints.md}) {
     padding: 24px 20px;
   }
 `;

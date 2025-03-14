@@ -1,11 +1,14 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import styled from 'styled-components';
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, Typography } from 'antd';
 import { CameraOutlined } from '@ant-design/icons';
 
 const { Header: AntHeader } = Layout;
+const { Title } = Typography;
 
 const StyledHeader = styled(AntHeader)`
   background-color: white;
@@ -18,7 +21,7 @@ const StyledHeader = styled(AntHeader)`
   top: 0;
   z-index: 1;
   
-  @media (max-width: 768px) {
+  @media (max-width: ${props => props.theme.breakpoints.md}) {
     padding: 0 20px;
   }
 `;
@@ -26,16 +29,15 @@ const StyledHeader = styled(AntHeader)`
 const Logo = styled.div`
   display: flex;
   align-items: center;
+`;
+
+const StyledTitle = styled(Title)`
+  margin: 0 0 0 12px !important;
+  color: ${props => props.theme.colors.primary};
+  font-size: 1.5rem !important;
   
-  h1 {
-    margin: 0;
-    margin-left: 10px;
-    color: ${props => props.theme.colors.primary};
-    font-size: 1.5rem;
-    
-    @media (max-width: 576px) {
-      font-size: 1.2rem;
-    }
+  @media (max-width: ${props => props.theme.breakpoints.sm}) {
+    font-size: 1.2rem !important;
   }
 `;
 
@@ -69,7 +71,7 @@ const Header = () => {
     <StyledHeader>
       <Logo>
         <CameraOutlined style={{ fontSize: '24px', color: '#1890ff' }} />
-        <h1>Photography Blog</h1>
+        <StyledTitle level={4}>Photography Blog</StyledTitle>
       </Logo>
       <StyledMenu
         mode="horizontal"

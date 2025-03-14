@@ -1,3 +1,5 @@
+'use client';
+
 import styled from 'styled-components';
 import { Typography } from 'antd';
 
@@ -30,6 +32,10 @@ export default function Home() {
       <Paragraph>
         This is a simple, elegant blog dedicated to showcasing beautiful photography. Browse through
         our collections and enjoy the visual journey.
+      </Paragraph>
+      <Paragraph>
+        Our minimalist design puts the focus on the images, allowing the photography to speak for itself.
+        Each post features high-quality images with the stories behind them.
       </Paragraph>
     </HomeContainer>
   );

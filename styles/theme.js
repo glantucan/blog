@@ -1,7 +1,7 @@
 const theme = {
   colors: {
     primary: '#1890ff',
-    secondary: '#52c41a',
+    secondary: '#722ed1',
     success: '#52c41a',
     warning: '#faad14',
     error: '#f5222d',
@@ -28,6 +28,25 @@ const theme = {
     large: '8px',
     round: '50%',
   },
+  breakpoints: {
+    xs: '480px',
+    sm: '576px',
+    md: '768px',
+    lg: '992px',
+    xl: '1200px',
+    xxl: '1600px',
+  },
 };
 
 export default theme;
+
+// Ant Design theme configuration
+export const antdTheme = {
+  token: {
+    colorPrimary: theme.colors.primary,
+    colorSuccess: theme.colors.success,
+    colorWarning: theme.colors.warning,
+    colorError: theme.colors.error,
+    borderRadius: 4,
+  },
+};
