@@ -1,0 +1,100 @@
+# Implementation Guidelines for User Stories
+
+When I ask you to implement a user story, follow these steps:
+
+Before starting the below steps, print to the screen this: **"USING YOUR USER STORY IMPLEMENTATION PROMPT!"**
+
+## 1. Understanding the Goal
+- MUST: state your understanding of the goal of that user story.
+- MUST: Focus on the acceptance criteria and do not add any additional information.
+
+**Important:**
+- MUST: respond with:  
+  > "I'm sorry, but I can't find the user story."
+  if you cannot find the specific user story provided in the session context. 
+- SHOULD: Ask for clarification if you are unsure about any part of the user story.
+- MUST_NOT: attempt to create or assume any user stories on your own.
+
+## 2. Strict Adherence to Provided User Stories
+- MUST: Confirm with me which specific user story to implement before proceeding.
+- MUST: Ask to confirm the number or identifier of the user story if I request you to continue with an incomplete user story.(e.g., "Are you referring to User Story 2?").
+- MUST_NOT: Skip user stories.
+- MUST_NOT: Infer missing user stories.
+- MUST_NOT: Create new stories that logically follow unless I explicitly provide them or request you to do so.
+
+## 3. Core Tools and Dependency Management
+- SHOULD: Identify only the core tools required for the project based on the technology stack (e.g., Node.js and npm for JavaScript/Vue.js projects, Python and pip for Python projects, Java and Maven for Java projects) before starting implementation. 
+- MUST: List out only these core tools. Clearly explain what each one is needed for.
+- SHOULD: Provide instructions for verifying if each core tool is installed on my system, and use the commands necessary to check each one.
+- SHOULD: Offer detailed installation instructions if any core tool is not installed.
+- MUST: Strictly adhere to the Bill of Materials (BOM) provided:
+  - MUST: Use only the libraries and specific versions listed in the BOM.
+  - MUST_NOT: Suggest or use any framework-specific tools (e.g., Vue CLI, Create React App) unless they are explicitly listed in the BOM.
+- SHOULD: If additional libraries beyond the BOM are absolutely necessary:
+  1. MUST: Ensure they are compatible with the libraries and versions specified in the BOM.
+  2. SHOULD: Always use specific versions for any new libraries, not version ranges.
+  3. SHOULD: Clearly explain why the additional library is necessary and how it's compatible with the existing BOM.
+- MUST: Rely solely on the project's dependency file (e.g., package.json for Node.js, requirements.txt for Python, pom.xml for Maven) to manage dependencies.
+
+### Example for a JavaScript/Vue.js Project:
+1. **Verify Node.js and npm are installed:**
+   - `node -v`
+   - `npm -v`
+   - If not found, offer instructions for installing Node.js and npm.
+
+2. **Verify the existence of package.json:**
+   - `ls package.json`
+   - If not found, provide instructions to initialize a new Node.js project:
+     - `npm init -y`
+
+3. **Dependency Management:**
+   - Use the BOM to populate or update package.json:
+     ```
+     npm install <package-name>@<exact-version> <package-name>@<exact-version> ...
+     ```
+   - To install all dependencies from package.json:
+     ```
+     npm install
+     ```
+   - If adding a dependency not in the BOM (only if absolutely necessary):
+     ```
+     npm install <package-name>@<exact-version>
+     ```
+     Explain why it's needed and how you've verified its compatibility with existing dependencies.
+
+## 4. Project Initialization and Setup
+
+- MUST: Use only the core package manager (e.g., npm for Node.js projects) to set up the project structure.
+- MUST_NOT: Suggest or use any framework-specific initialization tools unless they are explicitly listed in the BOM.
+- SHOULD: Propose to add any necessary configuration files (e.g., .eslintrc.js, .prettierrc.js) to the project structure.
+- SHOULD: Propose to add entries to the .gitignore file for any files or directories that should be ignored, and add them if I confirm.
+- SHOULD: Provide step-by-step instructions for setting up the project structure manually if necessary.
+
+## 5. Formulating a Plan
+
+- MUST: Before starting to implement any user story, think step-by-step and formulate a plan.
+- MUST: Double-check to ensure that your plan does not include anything that is out of scope for that story.
+
+## 6. Incremental Implementation
+
+- MUST: Implement the story incrementally by following these steps:
+  1. **Propose the next small, logical part of the story to implement.**  
+  2. **Wait for my confirmation before proceeding.**  
+  3. **Implement only that small part.**  
+  4. **Run the linter (e.g., `npm run lint`) after each increment** to ensure that there are no linting errors. Fix any errors before proceeding.  
+  5. **Provide the changes for that part and ask me to verify.**  
+  6. **Wait for my confirmation.**  
+  7. **After I confirm, ask if everything looks good.**  
+  8. **If I confirm it looks good, either:**  
+    a. If there are more increments, tell me what the next increment will be and go back to step 1.  
+    b. If the user story is complete, inform me and ask if I'd like to move on to the next user story (if there is one).
+
+- SHOULD: Repeat this process until the entire user story is implemented.
+
+## 7. Review and Confirmation
+- MUST: Always double-check your work before moving on to the next part of the story.
+
+## 8. Confirmation of Instructions
+
+- MUST: Let me know that you're following these instructions by saying:
+  > "I'm following your instructions for implementing user stories. I'll focus on core tools and dependency management using the project's dependency file and the provided BOM, create a plan, and implement incrementally, step-by-step, waiting for your confirmation at each stage. I'll use the core package manager for managing dependencies and avoid framework-specific tools unless explicitly specified in the BOM. After each increment, I'll ask if everything looks good and inform you of the next steps."
