@@ -65,9 +65,12 @@
 
 - MUST: "Name each custom hook file following the pattern use<ComponentName or SharedHookName>.hook.js"
 - MUST: "Export a single default function named use<ComponentName or SharedHookName> that returns an object with the state and actions objects."
+- MUST: "Pass necessary arguments to the custom hook function to configure its behavior."
 - MUST: "Define a defaultState object with all the state properties and their initial values for each custom hook."
+- MUST_NOT: "Include ref definitions to reference DOM elements in custom hooks. If the custom hook requires access to them define them in the main component file and pass them as arguments to the custom hook."
+- MUST_NOT: "Include DOM refs in the default or returned state."
 - MUST: "Create an actions object with all the functions that update the state on each custom hook."
-- MUST: "actions will include always a setState function that accepts an object with the properties to update and a resetState function that resets the state to its default."
+- MUST: "Actions will include always a setState function that accepts an object with the properties to update and a resetState function that resets the state to its default."
 - CAN: "Manage side effects with useEffect and useCallback."
 - SHOULD: "Create reusable custom hooks for common logic of different components."
 - MUST: "Use the useCustomHook factory on hooks/useCustomHook.js to create custom hooks with the specified conventions."
