@@ -1,81 +1,57 @@
 # Javascript conventions:
 
-## Readability:
+## CORE PRINCIPLES:
 
-- MUST: "Write code that's easy to read and understand."
-- SHOULD: "Keep code simple; avoid unnecessary complexity."
-- CAN: "Use clear, consistent formatting."
-
-## Naming:
-
-- MUST: "Use descriptive, meaningful names."
-- SHOULD: "Use camelCase for variables and functions. All caps for constants."
-- CAN: "Add extra context when it improves clarity."
-
-## Functions:
-
-- MUST: "Each function does one thing; keep them small."
-- SHOULD: "Limit parameters; use an object if >2."
-- CAN: "Extract helper functions for complex logic."
-
-## Comments:
-
-- MUST: "Write self-explanatory code."
-- SHOULD: "Comment only non-obvious logic."
-- CAN: "Supplement with external documentation if needed."
-
-## Error handling:
-
-- MUST: "Handle errors with exceptions (not error codes)."
-- SHOULD: "Provide meaningful error messages."
-
-## Security:
-
-- MUST: "Implement secure coding practices."
-- SHOULD: "Validate inputs and use secure APIs."
-
-## Functional programming:
-
-- MUST: "Use code as decalarative as possible."
-- SHOULD: "Apply pure functions, immutability, and composition."
-- CAN: "Mix with imperative code if the functional alternative is too obscure."
-
-## OOP:
-
-- MUST_NOT: "Use OOP unless it enhances clarity or maintainability."
-- SHOULD_NOT: "Create classes."
-- CAN: "Use OOP when the problem domain naturally fits. Use Factory functions to create objects if necessary."
-
-## TypeScript:
-
-- MUST_NOT: "Use TypeScript."
-- SHOULD: "Stick to JavaScript."
+- MUST: Write readable, self-explanatory code that does one thing well
+- SHOULD: Keep code simple; avoid unnecessary complexity.
+- SHOULD_NOT: Comment normal code
+- SHOULD: Comment only non-obvious logic, hacks, or workarounds
+- CAN: Supplement with external documentation if needed.
+- MUST: Handle errors with exceptions, use try/catch for loading remote files or API calls and provide meaningful error messages.
+- MUST: Write declarative code when possible, prefering functional over imperative programming.
+- MUST: Each function does one thing; keep them small.
+- SHOULD: Limit parameters; use an object argument if >2.
+- SHOULD: Apply pure functions, immutability, composition, and functional programming principles when possible.
+- SHOULD_NOT: Create classes or use Typescript
+- CAN: Mix functional and imperative code only when the functional alternative is too obscure or inneficient.
+- CAN: Use factory functions when object creation is necessary.
+- SHOULD: Use async/await for async code.
+- CAN: Use promise.all for parallel async operations.
+- MUST: Implement secure coding practices.
+- SHOULD: Validate inputs and use secure APIs.
 
 ## React conventions:
 
-- Create a folder for each component in the src/components folder, with all the component related files (styled components, custom hooks, etc.).
-- MUST: "Use functional components."
-- MUST: "Create small, reusable components."
-- MUST: "Create custom hook files for managing state and side effects of each component."
-- MUST: "Create separate files for styled components, separating component logic from styling."
-- MUST: "Put reuseable hooks in the src/hooks folder."
-- MUST: "Nest component folders for components that are only used by a parent component if their functionality is tightly coupled with that parent component."
+- MUST: Create small functional components; Create a folder for each component in the src/components
+- MUST: Use functional components.
+- SHOULD: Create reusable components whenever possible.
+- MUST: Create separate custom hook files for managing state and side effects of each component.
+- MUST: Create separate files for styled components
+- MUST: Put reusable hooks in the src/hooks folder.
+- SHOULD: Nest component folders when functionality is tightly coupled.
+- CAN: skip custom hook files or styled component files for very simple components (<50 lines).
+
+### Component files:
+
+- MUST: Name component files as <ComponentName>.jsx
+- MUST: Define DOM refs here and pass them as arguments to custom hooks if needed.
+- SHOULD: Manage state and effects with custom hooks, pass them props as needed.
+- SHOULD: Import Styled components from the styled component file.
+- CAN: Define state and handler functions here if they are really simple.
+- SHOULD: delegate handler functions to custom hooks actions object.
 
 ### Custom hook files:
 
-- MUST: "Name each custom hook file following the pattern use<ComponentName or SharedHookName>.hook.js"
-- MUST: "Export a single default function named use<ComponentName or SharedHookName> that returns an object with the state and actions objects."
-- MUST: "Pass necessary arguments to the custom hook function to configure its behavior."
-- MUST: "Define a defaultState object with all the state properties and their initial values for each custom hook."
-- MUST_NOT: "Include ref definitions to reference DOM elements in custom hooks. If the custom hook requires access to them define them in the main component file and pass them as arguments to the custom hook."
-- MUST_NOT: "Include DOM refs in the default or returned state."
-- MUST: "Create an actions object with all the functions that update the state on each custom hook."
-- MUST: "Actions will include always a setState function that accepts an object with the properties to update and a resetState function that resets the state to its default."
-- CAN: "Manage side effects with useEffect and useCallback."
-- SHOULD: "Create reusable custom hooks for common logic of different components."
-- MUST: "Use the useCustomHook factory on hooks/useCustomHook.js to create custom hooks with the specified conventions."
+- MUST: Name as use<ComponentName or SharedHookName>.hook.js; export single default function returning state/actions objects
+- MUST: Use the useCustomHook factory from hooks/useCustomHook.js
+- SHOULD: Keep actions simple, pure and single responsibility functions.
+- CAN: Define async actions to manage async logic.
+- MUST_NOT: Include DOM refs in the default or returned state.
+- MUST: Create an actions object with all the functions that update the state of the component, load files, request data from an API, etc.
+- CAN: Manage side effects with useEffect and useCallback.
+- SHOULD: Delegate to reusable custom hooks for common logic of different components.
 
 ### Styled component files:
 
-- MUST: "Name styled component files as <ComponentName>.styled.js"
-- CAN: "Export several styled components if needed to maintain styled components small, reusable, and readable"
+- MUST: Name styled component files as <ComponentName>.styled.js
+- CAN: Export several styled components if needed to maintain styled components small, reusable, and readable
