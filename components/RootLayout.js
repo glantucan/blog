@@ -6,7 +6,7 @@ import GlobalStyle from '../styles/GlobalStyle';
 import theme, { antdTheme } from '../styles/theme';
 import Header from './Header';
 import Footer from './Footer';
-import PageTransition from './PageTransition';
+import PageTransition from './PageTransition/PageTransition';
 
 export default function RootLayout({ children, fontFamily }) {
   // Update antdTheme with font family
