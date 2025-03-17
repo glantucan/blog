@@ -54,6 +54,7 @@
 - MUST: Create an actions object with all the functions that update the state of the component, load files, request data from an API, etc.
 - CAN: Manage side effects with useEffect and useCallback.
 - SHOULD: Delegate to reusable custom hooks for common logic of different components.
+- SHOULD_NOT: Create custom hook files if the logic is very simple or there is no state or side effects to manage.
 
 ### Styled component files:
 
