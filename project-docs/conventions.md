@@ -60,3 +60,4 @@
 
 - MUST: Name styled component files as <ComponentName>.styled.js
 - CAN: Export several styled components if needed to maintain styled components small, reusable, and readable
+- SHOULD: Prefer to export just one styled components with sccs nested rules for simple components (< 100 lines).
