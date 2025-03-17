@@ -20,6 +20,10 @@
 - MUST: Implement secure coding practices.
 - SHOULD: Validate inputs and use secure APIs.
 
+## Next conventions:
+
+- MUST: Separate routing from page components. page.js files must load components from the components folder and pass props to them.
+
 ## React conventions:
 
 - MUST: Create small functional components; Create a folder for each component in the src/components
