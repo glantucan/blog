@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Layout, Menu, Typography } from 'antd';
+import React from 'react';
 
 const { Header: AntHeader } = Layout;
 const { Title } = Typography;
@@ -14,7 +15,7 @@ export const StyledHeader = styled(AntHeader)`
   position: sticky;
   top: 0;
   z-index: 1;
-  
+
   @media (max-width: ${props => props.theme.breakpoints.md}) {
     padding: 0 20px;
   }
@@ -29,7 +30,7 @@ export const StyledTitle = styled(Title)`
   margin: 0 0 0 12px !important;
   color: ${props => props.theme.colors.primary};
   font-size: 1.5rem !important;
-  
+
   @media (max-width: ${props => props.theme.breakpoints.sm}) {
     font-size: 1.2rem !important;
   }
