@@ -15,8 +15,8 @@ A modern, minimalist photography blog built with Next.js and Ant Design.
 ## Tech Stack
 
 - **Frontend Framework**: Next.js 15.2.2
-- **UI Library**: Ant Design 5.15.0
-- **Styling**: styled-components 6.1.8
+- **UI Library**: Ant Design 5.22.7
+- **Styling**: styled-components 6.1.15
 - **Content Processing**: gray-matter, remark, remark-html
 - **Image Handling**: react-medium-image-zoom, react-photo-album
 - **Search**: Fuse.js
@@ -34,8 +34,8 @@ A modern, minimalist photography blog built with Next.js and Ant Design.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/photography-blog.git
-   cd photography-blog
+   git clone https://github.com/glantucan/blog.git
+   cd blog
    ```
 
 2. Install dependencies:
