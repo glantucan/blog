@@ -16,8 +16,8 @@ const About = () => {
       </Paragraph>
       <Paragraph>
         The blog features a clean, minimalist design that puts the focus on the images. The
-        single-column layout ensures that each photograph gets the attention it deserves, while
-        the responsive design makes the site accessible on any device.
+        single-column layout ensures that each photograph gets the attention it deserves, while the
+        responsive design makes the site accessible on any device.
       </Paragraph>
       <Paragraph>
         The blog is built using modern web technologies including Next.js, React, and Ant Design,
