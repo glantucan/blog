@@ -32,17 +32,20 @@ A modern, minimalist photography blog built with Next.js and Ant Design.
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/yourusername/photography-blog.git
    cd photography-blog
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. Run the development server:
+
    ```bash
    npm run dev
    ```
@@ -63,4 +66,5 @@ Content is managed through a separate GitHub repository. The blog fetches conten
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+Copyright (C) 2025 Oscr Espeso Gil (AKA Glantucan)
+This project is licensed under the GPL-3.0-or-later License - see the LICENSE file for details.
