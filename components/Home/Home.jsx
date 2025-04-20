@@ -1,9 +1,9 @@
 'use client';
 
-import { Image, Typography } from 'antd';
+import { Image, Typography, List, Space } from 'antd';
 import { StyledHome } from './Home.styled';
 
-const { Title, Paragraph } = Typography;
+const { Title, Paragraph, Text } = Typography;
 
 const Home = ({ posts }) => {
   return (
@@ -14,13 +14,13 @@ const Home = ({ posts }) => {
       <Paragraph>Aprendiendo a desaprender.. y otras fricadas varias.</Paragraph>
 
       {posts.length > 0 ? (
-        <ul>
-          {posts.map(post => (
-            <li key={post.slug}>
-              <h2>{post.title}</h2>
-              <p>{new Date(post.date).toLocaleDateString()}</p>
-              <p>Categoría: {post.category}</p> {/* Display category */}
-              <p>Etiquetas: {post.tags.join(', ')}</p> {/* Display tags */}
+        <List
+          dataSource={posts}
+          itemLayout="vertical"
+          renderItem={post => (
+            <List.Item>
+              <Title level={2}>{post.title}</Title>
+
               {post.featuredImages &&
                 post.featuredImages.map((fImage, index) => (
                   <Image
@@ -30,11 +30,29 @@ const Home = ({ posts }) => {
                     alt={`Imagen destacada ${index + 1}`}
                   />
                 ))}
-              <p>{post.excerpt}</p>
-              <p>Lectura de {post.readingTime} min</p>
-            </li>
-          ))}
-        </ul>
+              <Paragraph style={{ marginTop: '0.5em' }}>{post.excerpt}</Paragraph>
+              <Space
+                align="baseline"
+                style={{ display: 'flex', justifyContent: 'space-between' }}
+                wrap
+              >
+                <Space>
+                  <Text italic>Categoría:</Text>
+                  <Text strong>{post.category}</Text>
+                </Space>
+                <Space>
+                  <Text italic>Etiquetas: </Text>
+                  <Text italic strong>
+                    {post.tags.join(', ')}
+                  </Text>
+                </Space>
+                <Space>
+                  <Text italic>Lectura de {post.readingTime} min</Text>
+                </Space>
+              </Space>
+            </List.Item>
+          )}
+        />
       ) : (
         <p>No se han encontrado publicaciones.</p>
       )}
