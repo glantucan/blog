@@ -1,19 +1,13 @@
-// components/Home/Home.jsx
 'use client';
 
 import { Image, Typography } from 'antd';
-import { HomeContainer, WorkingMessage } from './Home.styled';
+import { StyledHome } from './Home.styled';
 
 const { Title, Paragraph } = Typography;
 
 const Home = ({ posts }) => {
   return (
-    <HomeContainer>
-      <WorkingMessage>
-        <Title level={4} style={{ color: 'white', margin: 0 }}>
-          We have a working app!
-        </Title>
-      </WorkingMessage>
+    <StyledHome>
       <Title style={{ textAlign: 'center' }}>
         Welcome to Glantucan's <br />
         Photography Blog
@@ -33,7 +27,8 @@ const Home = ({ posts }) => {
             <li key={post.slug}>
               <h2>{post.title}</h2>
               <p>{new Date(post.date).toLocaleDateString()}</p>
-
+              <p>Category: {post.category}</p> {/* Display category */}
+              <p>Tags: {post.tags.join(', ')}</p> {/* Display tags */}
               {post.featuredImages &&
                 post.featuredImages.map((fImage, index) => (
                   <Image
@@ -51,7 +46,7 @@ const Home = ({ posts }) => {
       ) : (
         <p>No posts found.</p>
       )}
-    </HomeContainer>
+    </StyledHome>
   );
 };
 

@@ -5,12 +5,3 @@ export default async function HomePage() {
   const posts = await fetchAndParsePosts();
   return <Home posts={posts} />;
 }
-
-export async function generateStatic() {
-  const posts = await fetchAndParsePosts();
-  return {
-    props: {
-      posts,
-    },
-  };
-}

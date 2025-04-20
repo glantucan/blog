@@ -7,6 +7,7 @@ These user stories focus on creating a minimal working version of the photograph
 **As a developer,** I want to set up the initial project structure with all required dependencies and create a basic page layout.
 
 **Acceptance Criteria:**
+
 - Next.js project is initialized with the agreed tech stack (React 18.3.0, Next.js 14.2.0)
 - All dependencies from the BOM are properly installed:
   - UI: Ant Design 5.15.0, styled-components 6.1.8, @ant-design/icons 5.3.0
@@ -24,6 +25,7 @@ These user stories focus on creating a minimal working version of the photograph
 - The application successfully builds and runs locally
 
 **Technical Notes:**
+
 - Use Next.js App Router for routing
 - Configure styled-components with Next.js (may require next-transpile-modules)
 - Set up a global theme using styled-components ThemeProvider
@@ -36,6 +38,7 @@ These user stories focus on creating a minimal working version of the photograph
 **As a developer,** I want to set up GitHub integration for content management and implement static content generation.
 
 **Acceptance Criteria:**
+
 - A separate GitHub repository is created for storing blog content
 - The repository structure includes:
   - A `/posts` directory for Markdown blog posts
@@ -68,7 +71,8 @@ These user stories focus on creating a minimal working version of the photograph
   - Images displayed where they're referenced in the Markdown
 
 **Technical Notes:**
-- Use Next.js's Static Site Generation (SSG) with getStaticProps and getStaticPaths
+
+- Use Next.js's 15 Static Site Generation (SSG)
 - Configure the image paths to reference the GitHub repository's raw image URLs
 - All pages are pre-rendered at build time, not on demand
 - Configure remark to properly handle image paths
@@ -80,6 +84,7 @@ These user stories focus on creating a minimal working version of the photograph
 **As a developer,** I want to implement the image gallery feature, add basic search functionality, and create an endpoint to trigger rebuilds.
 
 **Acceptance Criteria:**
+
 - Images within blog posts can be clicked to view in fullscreen mode using react-medium-image-zoom
 - A gallery view is implemented for posts with multiple images using react-photo-album:
   - Displays all images in the post in a grid layout
@@ -100,6 +105,7 @@ These user stories focus on creating a minimal working version of the photograph
 - A simple "We have a working app!" message appears on the homepage above the post list
 
 **Technical Notes:**
+
 - Configure Fuse.js with appropriate search options (keys, threshold)
 - Use Ant Design components for search UI
 - Implement CSS transitions for gallery and search result animations
@@ -110,6 +116,7 @@ These user stories focus on creating a minimal working version of the photograph
 ---
 
 When all these user stories are complete, you'll have a working version of your photography blog with:
+
 - A clean, responsive layout
 - GitHub-based content management
 - Fully static site generation for all pages
