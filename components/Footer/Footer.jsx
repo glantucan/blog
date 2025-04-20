@@ -8,7 +8,7 @@ const { Text } = Typography;
 
 const Footer = () => {
   const { currentYear } = useFooter();
-  
+
   return (
     <StyledFooter>
       <Text type="secondary">

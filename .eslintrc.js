@@ -1,14 +1,10 @@
 module.exports = {
-  extends: [
-    'next/core-web-vitals',
-    'prettier'
-  ],
-  plugins: ['prettier'],
+  extends: ['next/core-web-vitals', 'plugin:prettier/recommended'],
   rules: {
-    'prettier/prettier': 'error',
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
+    'react/no-unescaped-entities': 'off',
     'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
-    'no-console': ['warn', { allow: ['warn', 'error'] }]
-  }
+    'no-console': ['warn', { allow: ['warn', 'error', 'groupCollapsed'] }],
+  },
 };

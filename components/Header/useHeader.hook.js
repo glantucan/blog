@@ -5,11 +5,11 @@ import Link from 'next/link';
 export const useHeader = () => {
   const pathname = usePathname();
   const [selectedKey, setSelectedKey] = useState('/');
-  
+
   useEffect(() => {
     setSelectedKey(pathname);
   }, [pathname]);
-  
+
   const menuItems = [
     {
       key: '/',
@@ -23,6 +23,6 @@ export const useHeader = () => {
 
   return {
     selectedKey,
-    menuItems
+    menuItems,
   };
 };

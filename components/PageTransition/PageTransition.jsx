@@ -6,11 +6,7 @@ import { TransitionContainer } from './PageTransition.styled';
 const PageTransition = ({ children }) => {
   const { containerRef } = usePageTransition();
 
-  return (
-    <TransitionContainer ref={containerRef}>
-      {children}
-    </TransitionContainer>
-  );
+  return <TransitionContainer ref={containerRef}>{children}</TransitionContainer>;
 };
 
 export default PageTransition;

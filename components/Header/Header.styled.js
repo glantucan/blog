@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Layout, Menu, Typography } from 'antd';
-import React from 'react';
 
 const { Header: AntHeader } = Layout;
 const { Title } = Typography;

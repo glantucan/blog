@@ -1,6 +1,6 @@
 import { revalidatePath } from 'next/cache';
 
-export async function GET(request, response) {
+export async function GET(_request, _response) {
   try {
     // Revalidate the / route
     await revalidatePath('/home');
